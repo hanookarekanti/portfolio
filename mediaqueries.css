@@ -11,6 +11,11 @@
     height: fit-content;
   }
 }
+@media screen and (max-width: 900px) {
+  .details-container {
+    flex: 0 1 100%;
+  }
+}
 
 @media screen and (max-width: 1200px) {
   #desktop-nav {
