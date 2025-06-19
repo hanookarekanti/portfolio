@@ -267,22 +267,10 @@ section {
   position: relative;
 }
 
-/* .about-containers {
+.about-containers {
   gap: 2rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
-} */
-.about-containers {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.about-details-container {
-  flex: 0 1 calc(50% - 2rem); /* Two per row, accounting for gap */
-  box-sizing: border-box;
-  margin-bottom: 2rem;
 }
 .about-details-container {
   justify-content: center;
