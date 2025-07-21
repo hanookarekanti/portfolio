@@ -175,6 +175,14 @@ section {
   width: 400px;
   margin: auto 0;
 }
+.section__pic-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* Makes it circular */
+  border: 4px solid #ccc; /* Optional: adds a soft border */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+}
 
 .section__text {
   align-self: center;
