@@ -4,417 +4,483 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Arekanti Hanook — AI/ML Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
+
+    <!-- ─── SCROLL RUNNER TRACK ─── -->
+    <div id="scroll-track">
+      <div id="scroll-progress"></div>
+      <span id="scroll-runner">🤖</span>
+    </div>
+
+    <!-- ─── DESKTOP NAV (hidden on mobile via CSS) ─── -->
     <nav id="desktop-nav">
-      <div class="logo">Portfolio</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
+      <div class="logo">AH.dev</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work-exp">Experience</a></li>
+        <li><a href="#experience">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button class="theme-btn" onclick="toggleTheme()">🌙</button></li>
+      </ul>
     </nav>
+
+    <!-- ─── HAMBURGER NAV (hidden on desktop via CSS) ─── -->
     <nav id="hamburger-nav">
-      <div class="logo">AREKANTI HANOOK</div>
+      <div class="logo">AH.dev</div>
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <div class="menu-links">
+        <ul class="menu-links">
           <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#work-exp" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
+          <li><button class="theme-btn" onclick="toggleTheme()" style="margin-left: 1.4rem;">🌙</button></li>
+        </ul>
       </div>
     </nav>
+
+    <!-- ─── HERO ─── -->
     <section id="profile">
       <div class="section__pic-container">
-        <img src="./assets/pic1.jpg" alt="Hanook profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">AREKANTI HANOOK</h1>
-        <p class="section__text__p2">Fresher</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/Arekanti Hanook.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
+        <div class="pic-ring">
+          <img src="./assets/pic1.jpg" alt="Arekanti Hanook" />
         </div>
+        <div class="status-badge">Available for Opportunities</div>
+      </div>
+
+      <div class="section__text">
+        <p class="hero-eyebrow">// AI · ML · Production Systems</p>
+        <h1 class="hero-name">Arekanti<br /><span>Hanook</span></h1>
+        <p class="hero-role" id="robot-role"><span id="robot-emoji">🤖</span> <span id="robot-text"></span></p>
+
+        <div class="delivery-strip">
+          <span class="tag tag-deadline">⚡ Deadline-Driven</span>
+          <span class="tag tag-impact">↑ 90% Efficiency Gains</span>
+          <span class="tag tag-scale">∞ Production-Grade Systems</span>
+        </div>
+
+        <p class="hero-bio">
+          I build <strong>end-to-end AI pipelines</strong> that ship on time and hold up under real-world load.
+          From LLM inference optimization to knowledge graphs with 94% accuracy — I turn research into
+          <strong>reliable, measurable outcomes</strong>. Former AI/ML Engineer at <strong>IQVIA Technologies</strong>,
+          where I reduced manual processing by <strong>90%</strong> across live clinical workflows.
+        </p>
+
+        <div class="metrics-row">
+          <div class="metric-card">
+            <span class="metric-value">90%</span>
+            <div class="metric-label">Processing Effort Saved</div>
+          </div>
+          <div class="metric-card">
+            <span class="metric-value">94%</span>
+            <div class="metric-label">Model Accuracy</div>
+          </div>
+          <div class="metric-card">
+            <span class="metric-value">250+</span>
+            <div class="metric-label">DSA Problems Solved</div>
+          </div>
+          <div class="metric-card">
+            <span class="metric-value">#357</span>
+            <div class="metric-label">CodeChef Div4 Rank</div>
+          </div>
+        </div>
+
+        <div class="btn-container">
+          <button class="btn btn-primary" onclick="window.open('./assets/Arekanti Hanook.pdf')">Download CV</button>
+          <button class="btn btn-secondary" onclick="location.href='#contact'">Get in Touch</button>
+        </div>
+
         <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/arekanti-hanook-86089626a/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/hanookarekanti'"
-          />
+          <img src="./assets/linkedin.png" alt="LinkedIn" onclick="location.href='https://www.linkedin.com/in/arekanti-hanook-86089626a/'" />
+          <img src="./assets/github.png" alt="GitHub" onclick="location.href='https://github.com/hanookarekanti'" />
         </div>
       </div>
     </section>
+
+    <!-- ─── ABOUT ─── -->
     <section id="about">
-  <p class="section__text__p1">Get To Know More</p>
-  <h1 class="title">About Me</h1>
-  <div class="section-container">
-    <div class="about-details-container">
-      <div class="about-containers">
-        <div class="details-container">
-          <img src="./assets/education.png" alt="Education icon" class="icon" />
+      <p class="section-label">// Who I Am</p>
+      <h1 class="section-title">About Me</h1>
+      <div class="about-grid">
+
+        <div class="edu-card reveal">
           <h3>Education</h3>
+          <div class="edu-item">
+            <h4>NIT Jamshedpur</h4>
+            <p>Master of Computer Applications</p>
+            <p class="edu-meta">GPA 6.86 · 2022 – 2025</p>
+          </div>
+          <div class="edu-item">
+            <h4>Government College, Anantapuramu</h4>
+            <p>B.Sc</p>
+            <p class="edu-meta">GPA 7.07</p>
+          </div>
+        </div>
+
+        <div class="about-text reveal">
           <p>
-            National Institute of Technology Jamshedpur<br />
-            Master in Computer Application - GPA: 6.86<br />
-            Government College - Anantapuramu<br />
-            B.Sc - GPA: 7.07
+            I'm a results-driven AI/ML Engineer with a Master's in Computer Applications from NIT Jamshedpur.
+            My work sits at the intersection of <strong>LLMs, NLP, and production engineering</strong> — I don't just prototype;
+            I build systems that run reliably under real constraints and deadlines.
+          </p>
+          <p>
+            At IQVIA Technologies, I architected automation pipelines that cut manual clinical data processing by
+            <strong>90%</strong> — on schedule, without rework. I understand what it means to ship AI in production:
+            logging, monitoring, fault tolerance, and prompt engineering that actually holds up.
+          </p>
+          <p>
+            My projects span <strong>RAG-based medical assistants</strong>, <strong>Graph Neural Networks</strong> for
+            ancient text analysis (94% link prediction accuracy), and full-stack healthcare platforms serving 500+
+            concurrent users. Every build is scoped, timelines are honored, and output quality is measured.
+          </p>
+          <p>
+            Outside engineering: competitive coder (250+ DSA problems, Top 400 in CodeChef among 25,000+),
+            dancer, swimmer, and explorer of new places.
           </p>
         </div>
-      </div>
-      <div class="text-container">
-        <p style="margin-bottom: 1.5em;">
-          Hi, I’m Arekanti Hanook, a passionate and results-driven technology enthusiast with a Master’s degree in Computer Applications. I specialize in building robust, scalable, and user-focused applications using modern technologies such as React.js, Node.js, Tailwind CSS, and MongoDB, complemented by experience with advanced frameworks like PyTorch, PyTorch Geometric, and spaCy.
-        </p>
-        <p style="margin-bottom: 1.5em;">
-          My portfolio includes impactful projects like an AI-powered system for extracting and predicting familial relationships in the Bhagavad Gita using NLP and Graph Neural Networks, and a full-stack healthcare platform supporting 500+ concurrent users with secure authentication and optimized RESTful APIs. I have also developed responsive, high-performance websites that enhance user engagement across devices.
-        </p>
-        <p style="margin-bottom: 1.5em;">
-          With a strong foundation in Data Structures, Algorithms, Machine Learning, and Deep Learning, I have solved over 250 problems on LeetCode and GeeksforGeeks, and achieved a top 400 rank among 25,000+ participants in CodeChef Div4. I am passionate about leveraging AI and modern web technologies to solve real-world challenges and deliver meaningful solutions.
-        </p>
-        <p style="margin-bottom: 1.5em;">
-          Beyond coding, I enjoy dancing, swimming, and exploring new places. I am eager to collaborate on innovative projects and contribute to impactful software solutions—let’s connect and create something extraordinary together!
-        </p>
-      </div>
 
-
-    </div>
-  </div>
-  <img
-    src="./assets/arrow.png"
-    alt="Arrow icon"
-    class="icon arrow"
-    onclick="location.href='./#experience'"
-  />
-</section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Technical Skills</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Web Technologies</h2>
-            <div class="article-container">
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>HTML & CSS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>React.js</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Tailwind CSS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Node.js & Express.js</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>MongoDB</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Vite</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">AI & Data Science</h2>
-            <div class="article-container">
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Python</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>PyTorch & PyTorch Geometric</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>spaCy</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>LangChain</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>FAISS</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Project-Specific Expertise</h2>
-            <div class="article-container">
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Knowledge Graphs</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Graph Neural Networks (GNNs)</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Retrieval-Augmented Generation (RAG)</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Tools & Platforms</h2>
-            <div class="article-container">
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Git & GitHub</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>npm</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          
-          <!-- project1 -->
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/BhagavadGita.jpg"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Unveiling Connections</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/hanookarekanti/Dr4U'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2"
-                onclick="window.open('./assets/BhagavadGitaDetails.pdf')"
-              >
-                Details
-              </button>
-            </div>
-          </div>
-          
-          <!-- project2 -->
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project1.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">DoctorForYou</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/hanookarekanti/Dr4U'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://dr4u-frontend.onrender.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          
-          <!-- project3 -->
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project3.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Book Browser</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/hanookarekanti/Book_Search'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href=' https://book-search-1-vfos.onrender.com'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
 
-          
-          <!-- project4 -->
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project1_img.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Restaurant</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/hanookarekanti/Restaurant.git'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://main--snazzy-kashata-e7539e.netlify.app/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
+    <div class="divider"></div>
 
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="anokanilsathis123@gmail.com">arekantihanook123@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/arekanti-hanook-86089626a/">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <!-- ─── WORK EXPERIENCE ─── -->
+    <section id="work-exp">
+      <p class="section-label">// Professional Track Record</p>
+      <h1 class="section-title">Experience</h1>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="timeline-company">IQVIA Technologies</span>
+            <span class="timeline-period">Aug 2025 – Mar 2026</span>
+          </div>
+          <p class="timeline-role">AI / ML Engineer (Trainee) · Kochi, India</p>
+          <ul class="timeline-points">
+            <li>Architected end-to-end <strong>NLP + LLM automation pipelines</strong> — delivered on schedule, reducing manual processing effort by <strong>90%</strong>.</li>
+            <li>Designed <strong>scalable unstructured document extraction</strong> using GPT-based models, boosting accuracy and throughput across clinical datasets.</li>
+            <li>Optimized LLM inference via <strong>prompt engineering &amp; retrieval tuning</strong>, cutting latency while maintaining response consistency.</li>
+            <li>Shipped <strong>production-ready AI systems</strong> with full logging, monitoring, and error handling — zero critical incidents post-deployment.</li>
+            <li>Built data validation and post-processing pipelines in cross-functional teams, measurably improving output quality.</li>
           </ul>
         </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="timeline-company">FastPix Solutions Pvt. Ltd.</span>
+            <span class="timeline-period">Apr 2025 – Jul 2025</span>
+          </div>
+          <p class="timeline-role">AI / ML Developer Intern · Hyderabad, India</p>
+          <ul class="timeline-points">
+            <li>Built <strong>data preprocessing and transformation pipelines</strong>, improving ML model readiness and data quality.</li>
+            <li>Implemented <strong>missing value imputation and cleaning techniques</strong>, enhancing dataset reliability.</li>
+            <li>Identified production dataset inconsistencies and collaborated with engineering to improve pipeline efficiency.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ─── SKILLS ─── -->
+    <section id="experience">
+      <p class="section-label">// Technical Arsenal</p>
+      <h1 class="section-title">Skills</h1>
+      <div class="skills-grid">
+
+        <div class="skill-group reveal">
+          <h2>Core AI / ML</h2>
+          <div class="skill-item"><span class="skill-name">Python</span><span class="skill-level level-expert">Expert</span></div>
+          <div class="skill-item"><span class="skill-name">PyTorch &amp; PyTorch Geometric</span><span class="skill-level level-intermediate">Intermediate</span></div>
+          <div class="skill-item"><span class="skill-name">LangChain</span><span class="skill-level level-intermediate">Intermediate</span></div>
+          <div class="skill-item"><span class="skill-name">spaCy / NLP</span><span class="skill-level level-intermediate">Intermediate</span></div>
+          <div class="skill-item"><span class="skill-name">FAISS</span><span class="skill-level level-intermediate">Intermediate</span></div>
+          <div class="skill-item"><span class="skill-name">Transformers / LLMs</span><span class="skill-level level-intermediate">Intermediate</span></div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h2>Systems &amp; Engineering</h2>
+          <div class="skill-item"><span class="skill-name">FastAPI</span><span class="skill-level level-expert">Expert</span></div>
+          <div class="skill-item"><span class="skill-name">Model Deployment</span><span class="skill-level level-intermediate">Intermediate</span></div>
+          <div class="skill-item"><span class="skill-name">Inference Optimization</span><span class="skill-level level-intermediate">Intermediate</span></div>
+          <div class="skill-item"><span class="skill-name">RAG Pipelines</span><span class="skill-level level-intermediate">Intermediate</span></div>
+          <div class="skill-item"><span class="skill-name">Docker</span><span class="skill-level level-basic">Basic</span></div>
+          <div class="skill-item"><span class="skill-name">Git &amp; GitHub</span><span class="skill-level level-intermediate">Intermediate</span></div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h2>Databases &amp; Infra</h2>
+          <div class="skill-item"><span class="skill-name">MongoDB</span><span class="skill-level level-intermediate">Intermediate</span></div>
+          <div class="skill-item"><span class="skill-name">MySQL</span><span class="skill-level level-intermediate">Intermediate</span></div>
+          <div class="skill-item"><span class="skill-name">Linux</span><span class="skill-level level-intermediate">Intermediate</span></div>
+          <div class="skill-item"><span class="skill-name">Postman / API Testing</span><span class="skill-level level-expert">Expert</span></div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h2>Specialisations</h2>
+          <div class="skill-item"><span class="skill-name">Knowledge Graphs</span><span class="skill-level level-expert">Expert</span></div>
+          <div class="skill-item"><span class="skill-name">Graph Neural Networks</span><span class="skill-level level-intermediate">Intermediate</span></div>
+          <div class="skill-item"><span class="skill-name">Prompt Engineering</span><span class="skill-level level-expert">Expert</span></div>
+          <div class="skill-item"><span class="skill-name">Data Pipelines</span><span class="skill-level level-intermediate">Intermediate</span></div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h2>Web Stack</h2>
+          <div class="skill-item"><span class="skill-name">React.js</span><span class="skill-level level-intermediate">Intermediate</span></div>
+          <div class="skill-item"><span class="skill-name">Node.js &amp; Express</span><span class="skill-level level-intermediate">Intermediate</span></div>
+          <div class="skill-item"><span class="skill-name">HTML &amp; CSS</span><span class="skill-level level-expert">Expert</span></div>
+          <div class="skill-item"><span class="skill-name">Tailwind CSS</span><span class="skill-level level-intermediate">Intermediate</span></div>
+          <div class="skill-item"><span class="skill-name">Vite</span><span class="skill-level level-expert">Expert</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ─── PROJECTS ─── -->
+    <section id="projects">
+      <p class="section-label">// What I've Built</p>
+      <h1 class="section-title">Projects</h1>
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <img src="./assets/project1.png" alt="AI Medical Assistant" />
+          <div class="project-body">
+            <h2>AI Medical Assistant</h2>
+            <div class="project-stack">
+              <span class="stack-tag">FastAPI</span>
+              <span class="stack-tag">LangChain</span>
+              <span class="stack-tag">LLaMA.cpp</span>
+              <span class="stack-tag">FAISS</span>
+              <span class="stack-tag">BioBERT</span>
+              <span class="stack-tag">MongoDB</span>
+            </div>
+            <div class="project-btn-row">
+              <button onclick="location.href='https://github.com/hanookarekanti'">GitHub</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <img src="./assets/BhagavadGita.jpg" alt="Knowledge Graph" />
+          <div class="project-body">
+            <h2>Knowledge Graph — Bhagavad Gita</h2>
+            <div class="project-stack">
+              <span class="stack-tag">R-GCN</span>
+              <span class="stack-tag">PyTorch Geometric</span>
+              <span class="stack-tag">spaCy</span>
+              <span class="stack-tag">NetworkX</span>
+              <span class="stack-tag">NLP</span>
+            </div>
+            <div class="project-btn-row">
+              <button onclick="location.href='https://github.com/hanookarekanti/Dr4U'">GitHub</button>
+              <button onclick="window.open('./assets/BhagavadGitaDetails.pdf')">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <img src="./assets/project1.png" alt="DoctorForYou" />
+          <div class="project-body">
+            <h2>DoctorForYou</h2>
+            <div class="project-stack">
+              <span class="stack-tag">React.js</span>
+              <span class="stack-tag">Node.js</span>
+              <span class="stack-tag">MongoDB</span>
+              <span class="stack-tag">Express</span>
+            </div>
+            <div class="project-btn-row">
+              <button onclick="location.href='https://github.com/hanookarekanti/Dr4U'">GitHub</button>
+              <button onclick="location.href='https://dr4u-frontend.onrender.com/'">Live Demo</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <img src="./assets/project3.png" alt="Book Browser" />
+          <div class="project-body">
+            <h2>Book Browser</h2>
+            <div class="project-stack">
+              <span class="stack-tag">React.js</span>
+              <span class="stack-tag">API Integration</span>
+            </div>
+            <div class="project-btn-row">
+              <button onclick="location.href='https://github.com/hanookarekanti/Book_Search'">GitHub</button>
+              <button onclick="location.href='https://book-search-1-vfos.onrender.com'">Live Demo</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section id="contact">
+      <p class="section-label">// Let's Work Together</p>
+      <h1 class="section-title">Get in Touch</h1>
+      <p class="contact-sub">
+        Open to full-time AI/ML engineering roles and freelance project collaborations.<br />
+        I respond within 24 hours.
+      </p>
+      <div class="contact-card">
+        <a class="contact-item" href="mailto:arekantihanook123@gmail.com">
+          <img src="./assets/email.png" alt="Email" />
+          <span>arekantihanook123@gmail.com</span>
+        </a>
+        <a class="contact-item" href="https://www.linkedin.com/in/arekanti-hanook-86089626a/" target="_blank">
+          <img src="./assets/linkedin.png" alt="LinkedIn" />
+          <span>LinkedIn Profile</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+      <p>© 2026 Arekanti Hanook — Built with precision.</p>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work-exp">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
-      <!-- <p>Copyright &#169; 2023 John Doe. All Rights Reserved.</p> -->
     </footer>
-    <script src="script.js"></script>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.querySelector('.menu-links');
+        const icon = document.querySelector('.hamburger-icon');
+        menu.classList.toggle('open');
+        icon.classList.toggle('open');
+      }
+
+      // --- ALL JAVASCRIPT ANIMATIONS AND LOGIC ---
+      document.addEventListener("DOMContentLoaded", () => {
+        
+        // 1. Theme Toggle (Day/Night logic)
+        const hour = new Date().getHours();
+        // Light Mode from 6 AM to 12 PM (Noon). Dark Mode from 1 PM to 5 AM.
+        const isDay = hour >= 6 && hour <= 12;
+        const themeBtns = document.querySelectorAll('.theme-btn');
+
+        if (isDay) {
+          document.body.classList.add('light-theme');
+          themeBtns.forEach(btn => btn.innerHTML = "☀️");
+        }
+
+        window.toggleTheme = () => {
+          document.body.classList.toggle('light-theme');
+          const isLight = document.body.classList.contains('light-theme');
+          themeBtns.forEach(btn => btn.innerHTML = isLight ? "☀️" : "🌙");
+        };
+
+        // 2. Scroll Runner (Rocket progress)
+        let isScrolling = false;
+        window.addEventListener('scroll', () => {
+          if (!isScrolling) {
+            window.requestAnimationFrame(() => {
+              const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+              const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+              const scrolled = (winScroll / height) * 100;
+              
+              document.getElementById('scroll-runner').style.left = scrolled + '%';
+              document.getElementById('scroll-progress').style.width = scrolled + '%';
+              isScrolling = false;
+            });
+            isScrolling = true;
+          }
+        });
+
+        // 3. Scroll Reveal Animations
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if(entry.isIntersecting) {
+              entry.target.classList.add('active');
+            } else {
+              entry.target.classList.remove('active'); // Hides the element when scrolling past it
+            }
+          });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // 4. Robot Intro Sequence
+        const emoji = document.getElementById("robot-emoji");
+        const textEl = document.getElementById("robot-text");
+        const textToType = "AI / ML Developer";
+
+        function playRobotAnimation() {
+          // 1. Reset states instantly (no transition)
+          emoji.style.transition = "none";
+          emoji.innerHTML = "🤖";
+          emoji.style.opacity = "0";
+          emoji.style.transform = "translateX(-20px)";
+          
+          textEl.style.transition = "none";
+          textEl.innerHTML = "";
+          textEl.style.opacity = "1";
+          textEl.style.color = "";
+
+          // 2. Start the sequence after a tiny delay to allow reset to apply
+          setTimeout(() => {
+            emoji.style.transition = "all 0.5s ease";
+            emoji.style.opacity = "1";
+            emoji.style.transform = "translateX(0)"; // walks in
+
+            setTimeout(() => {
+              let i = 0;
+              const typing = setInterval(() => {
+                textEl.innerHTML += textToType.charAt(i);
+                
+                // Simulate taking a step
+                emoji.style.transform = i % 2 === 0 ? "translateY(-4px)" : "translateY(0)";
+                i++;
+                
+                if(i === textToType.length) { 
+                  clearInterval(typing); 
+                  
+                  setTimeout(() => {
+                    emoji.innerHTML = "🤖"; // robot gets strong & blast!
+                    emoji.style.transform = "scale(1.2)";
+                    textEl.style.color = "var(--accent)";
+                    
+                    // Wait 2 seconds, then fade out and restart
+                    setTimeout(() => {
+                      textEl.style.transition = "opacity 0.5s ease";
+                      textEl.style.opacity = "0"; 
+                      emoji.style.opacity = "0"; // fade out robot too
+                      
+                      // Wait 500ms for fade out to complete, then loop!
+                      setTimeout(() => {
+                        playRobotAnimation();
+                      }, 500); 
+                    }, 2000); // 2 second delay
+                    
+                  }, 500); 
+                }
+              }, 130);
+            }, 600);
+          }, 100);
+        }
+
+        // Start the infinite loop
+        playRobotAnimation();
+      });
+    </script>
   </body>
 </html>
